@@ -36,10 +36,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Create release
         uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GST_TOKEN }}
-      - name: Upload release artifacts
-        uses: Roang-zero1/github-upload-release-artifacts-action@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: dist/casper-aytac.zip
