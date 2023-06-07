@@ -63,6 +63,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .viewport {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -2118,7 +2119,8 @@ html.dark-mode figcaption a {
     color: #fff;
 }
 
-html.dark-mode .gh-head {
+html.dark-mode .gh-head,
+html.dark-mode .has-cover:not(.home-template) .gh-head {
     background: var(--color-darkmode);
     color: #fff;
 }
@@ -2285,6 +2287,13 @@ html.dark-mode .footer-cta-title {
     color: #fff;
 }
 
+@media (max-width: 767px) {
+    html.dark-mode .gh-head-open #gh-head,
+    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
+        background: var(--color-darkmode);
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     html.auto-color body {
         color: rgba(255, 255, 255, 0.75);
@@ -2303,7 +2312,8 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .gh-head {
+    html.auto-color .gh-head,
+    html.auto-color .has-cover:not(.home-template) .gh-head {
         background: var(--color-darkmode);
         color: #fff;
     }
@@ -2469,6 +2479,13 @@ html.dark-mode .footer-cta-title {
     html.auto-color .footer-cta-title {
         color: #fff;
     }
+
+    @media (max-width: 767px) {
+        html.auto-color .gh-head-open #gh-head,
+        html.auto-color .gh-head-open #gh-head .gh-head-actions {
+            background: var(--color-darkmode);
+        }
+    }
 }
 
 /*
@@ -2485,3 +2502,4 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
