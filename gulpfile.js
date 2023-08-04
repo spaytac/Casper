@@ -19,8 +19,8 @@ const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const REPO = 'tryghost/Casper';
+const REPO_READONLY = 'tryghost/Casper';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -113,6 +113,8 @@ exports.release = async () => {
     console.log(`\nCreating release for ${newVersion}...`);
 
     const githubToken = process.env.GST_TOKEN;
+    const repo_readonly = process.env.REPO_READONLY ?? REPO_READONLY;
+    const repo = process.env.REPO ?? REPO;
 
     if (!githubToken) {
         console.log('Please configure your environment with a GitHub token located in GST_TOKEN');
